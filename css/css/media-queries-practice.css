@@ -1,0 +1,22 @@
+.container {
+    width: 900px;
+    margin: 0px auto;
+}
+#left-column {
+    max-width: 60%;
+    float: left;
+    background: lightblue;
+}
+#right-column {
+    max-width: 40%;
+    float: left;
+    background: orange;
+}
+@media screeen and (max-width: 400px) {
+    #container {
+        width: 900px;
+    }
+    img {
+        width: 50%;
+    }
+}
