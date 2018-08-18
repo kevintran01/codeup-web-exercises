@@ -1,32 +1,38 @@
-/* mobile first CSS */
+body {
+    font:13px/1.0 Arial, Helvetica, sans-serif;
+}
+#main {
+    float: left;
+}
+.main, .sub-section {
+    width: 80%;
+}
+.alert-info {
+    background-color: lightskyblue;
+}
+ul .nav-links {
+    margin: 0;
+    padding: 0;
+}
 
-    /* Set the font-family to sans-serif on the entire document.*/
+ul > li {
+    float: right;
+    display: inline;
+    margin-top: 10px;
+    padding: 0 15px 0 15px;
+}
 
-    /*
-        "skip to main content" should be centered vertically and horizontally
-        "skip to main" should have light-blue background color
-        "skip to main" should have a border of solid grey, probably 1 or 2 pixels
-     */
-
-    /* nav-links should have:
-        - background color of grey
-        - margin of maybe .4 or .5em
-        - Link text are centered vertically and horizontally
-     */
-
-    /*
-        header-img should have:
-        min-width of 339px
-        keep its aspect ratio
-        some margin, maybe .5em
-    */
-
-    /* All text in the sub-section should be italicized */
-
-    /* Footer needs:
-        copyright info on the left
-        social link-icons on the right.
-     */
-
-
-/* Desktop size CSS goes below here */
+h1 {
+    float: left;
+}
+/* Media Queries */
+img {max-width: 100%}
+@media (max-width: 500px) {
+    ul > li {
+        display: inline-block;
+        background-color: lightslategrey;
+        text-align: center;
+        width: 100%;
+        padding: 15px 0 15px 0;
+    }
+}
