@@ -1,0 +1,52 @@
+.fancy-header {
+    text-align: center;
+}
+
+h2 {
+    color: red;
+    text-decoration: underline;
+}
+
+body {
+    background-image: url("../images/sunset.jpg");
+    background-color: cornsilk;
+    background-size: 1000px;
+    font-family: "Apple Braille";
+    color: white;
+}
+
+li {
+    list-style-type: square;
+}
+
+table {
+    font-family: "Al Bayan";
+    padding-left: 100px;
+}
+a:hover {
+    color: hotpink;
+}
+
+th {
+    color: hotpink;
+}
+
+a {
+    color: red;
+}
+
+.plan {
+    text-decoration: underline;
+    text-decoration-color: white;
+    padding-right: 35px;
+
+}
+
+.features {
+    padding-left: 35px;
+}
+
+th {
+    text-decoration: underline;
+    text-decoration-color: white;
+}
