@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Property Search</title>
+    </head>
+    <body>
+        <form method="post" action="">
+            <h2>Helping you on your <em>Property Search!</em></h2>
+            <hr>
+            <div>
+                <p><strong>Select your property type!</strong> <em>select all that apply.</em></p>
+                <label for="residentialA">
+                    Residential Attached<input id="residentialA" type="radio" name="pType1" value="residentialA">
+                    <br>
+                <label for="Residential Detached Single Family">
+                    Residential Detached Single Family<input id="Residential Detached Single Family" type="radio" name="pType2" value="Residential Detached Single Family">
+                    <br>
+                <label for="Duplex Side By Side">
+                    Duplex Side By Side<input id="Duplex Side By Side" type="radio" name="pType3" value="Duplex Side By Side">
+                    <br>
+                <label for="Duplex Up And Down">
+                    Duplex Up And Down<input id="Duplex Up And Down" type="radio" name="pType4" value="Duplex Up And Down">
+                    <br>
+                <label for="Half Duplex">
+                    Half Duplex<input id="Half Duplex" type="radio" name="pType5" value="Half Duplex">
+                    <br>
+                <label for="Apartment">
+                    Apartment<input id="Apartment" type="radio" name="pType6" value="Apartment">
+            </div>
+            <hr>
+            <div>
+                <label id="sqF">Please select your desire home size:</label>
+                <select name="sqF">
+                    <option value="sqft">500-1000sq ft</option>
+                    <option value="sqft">1000-1500sq ft</option>
+                    <option value="sqft">1500-2000sq ft</option>
+                    <option value="sqft">2000-2500sq ft</option>
+                    <option value="sqft">2500-3000sq ft</option>
+                    <option value="sqft">3000-3500sq ft</option>
+                </select>
+            </div>
+            <hr>
+            <div>
+                <label id="minP">Set <em>minumum</em> price.</label>
+                <input type="number" min="0" max="10000" name="minP">
+            </div>
+            <div>
+                <label id="maxP">Set <em>maximum</em> price.</label>
+                <input type="number" min="10000" max="150000000" name="maxP">
+            </div>
+            <div>
+                <label id="zipcode">Enter Zipcode</label>
+                <input type="number" placeholder="01234" max="99999">
+            </div>
+            <div>
+                <label id="room">Choose the amount of rooms</label>
+                <input type="number" min="10">
+            </div>
+            <div>
+                <label id="bath">Choose the amount of baths</label>
+                <input type="number" placeholder="2" max="20">
+            </div>
+<br>
+            <button>Search now!</button>
+        </form>
+    </body>
+</html>
