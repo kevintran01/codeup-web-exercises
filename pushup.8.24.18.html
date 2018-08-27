@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pushups 8-24-18</title>
+</head>
+<body>
+<script>
+    var dogs = [
+        {
+            name: "Annie",
+            age: 3,
+            breed: "labradoodle",
+        },
+        {
+            name: "Roxeanna",
+            age: 7,
+            breed: "Cocker Spaniel",
+            sex: "female",
+            legs: 3,
+        },
+        {
+            name: "Pookiepoo",
+            age: 2,
+            breed: "Chihuahua",
+        },
+        {
+            name: "Snoopadoop",
+            age: 2,
+            breed: "Cockapoo",
+            nobleHound: true,
+        },
+    ];
+
+
+    // write a function that receives an array of animals
+    // loops over them, and writes out the ones that
+    // satisfy a condition, like females, or a certain age or older,
+    // or all noble hounds
+
+    function ourFunctions(animals) {
+        for (var i = 0; i < animals.length; i++) {
+            if (animals[i].nobleHound || animals[i].breed.includes("oo") || animals[i].name)
+                // if (animals[i].age >= 3) {
+                console.log(animals[1].name);
+            }
+        }
+
+    ourFunctions(dogs);
+</script>
+</body>
+</html>

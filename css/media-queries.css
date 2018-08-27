@@ -1,0 +1,38 @@
+body {
+    font:13px/1.0 Arial, Helvetica, sans-serif;
+}
+#main {
+    float: left;
+}
+.main, .sub-section {
+    width: 80%;
+}
+.alert-info {
+    background-color: lightskyblue;
+}
+ul .nav-links {
+    margin: 0;
+    padding: 0;
+}
+
+ul > li {
+    float: right;
+    display: inline;
+    margin-top: 10px;
+    padding: 0 15px 0 15px;
+}
+
+h1 {
+    float: left;
+}
+/* Media Queries */
+img {max-width: 100%}
+@media (max-width: 500px) {
+    ul > li {
+        display: inline-block;
+        background-color: lightslategrey;
+        text-align: center;
+        width: 100%;
+        padding: 15px 0 15px 0;
+    }
+}
