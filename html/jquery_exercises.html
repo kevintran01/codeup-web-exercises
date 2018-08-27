@@ -4,12 +4,21 @@
     <meta charset="UTF-8">
     <title>Jquery Exercise</title>
 </head>
+<nav>
+    <ul>
+        <li>home</li>
+        <li>about</li>
+        <li>resume</li>
+        <li>codeup</li>
+    </ul>
+</nav>
 <body>
 <h1>JQuery Exercise</h1>
 <script type="text/javascript" src="js/jquery-2.2.4.js"></script>
 <div id="myDiv">id="myDiv"</div>
 <div class="myDiv2">Hello World!</div>
-<p class="myDiv2">This is jQuery. jQuery is awesome to work with. It has many functionalities to work with JavaScript</p>
+<p class="myDiv2">This is jQuery. jQuery is awesome to work with. It has many functionalities to work with
+    JavaScript</p>
 <ul class="firstList">
     <h1 id="myDiv3">Using jQuery functionalities</h1>
     <li class="codeup">Honda</li>
@@ -22,6 +31,7 @@
     $(document).ready(function () {
         alert('h1');
     });
+    alert($("resume").text('element'));
     $("#myDiv").css("border", "3px solid red");
     $(".myDiv2").css("color", "yellow");
     $(".myDiv2").css("border", "5px solid green");
@@ -32,7 +42,6 @@
     $(".codeup").css("font-size", "20px");
     $("h1, ul, li, title, div").css("background-color", "lightblue");
 
-
-</script>
-</body>
-</html>
+    $("body").mousemove(function (e) {
+        console.log(e)
+    });
