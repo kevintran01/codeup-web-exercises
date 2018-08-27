@@ -1,10 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Functions</title>
-    <script src="js/functions.js"></script>
-</head>
-<body>
-</body>
+<html>
+	<head>
+		<title>Functions JS</title>
+	</head>
+	<body>
+		<script>
+			
+			var myNameIs = 'Kevin';
+
+			function sayHello(name) {
+				console.log("Hello, " + name + "!");
+			}
+
+			sayHello(myNameIs);
+
+			var random = Math.floor((Math.random()*100)+1);
+
+			console.log("Random number is: " + random.toString());
+
+			function isOdd(numberToTest) {
+				(numberToTest % 2 === 1) ? console.log("Number was odd.") : console.log("Number was even.");
+			}
+
+			isOdd(random);
+		</script>
+	</body>
 </html>
