@@ -5,14 +5,34 @@
     <title>Jquery Exercise</title>
 </head>
 <body>
-<script type="text/javascript" src="js/jquery-2.2.4.js"></script>
 <h1>JQuery Exercise</h1>
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="js/jquery-2.2.4.js"></script>
+<div id="myDiv">id="myDiv"</div>
+<div class="myDiv2">Hello World!</div>
+<p class="myDiv2">This is jQuery. jQuery is awesome to work with. It has many functionalities to work with JavaScript</p>
+<ul class="firstList">
+    <h1 id="myDiv3">Using jQuery functionalities</h1>
+    <li class="codeup">Honda</li>
+    <li class="codeup">Toyota</li>
+    <li class="codeup">Hundai</li>
+    <li class="codeup">Poniac</li>
+</ul>
 <script>
     "use strict";
-    $(document).ready(function() {
-        alert( 'The DOM has finished loading!' );
+    $(document).ready(function () {
+        alert('h1');
     });
+    $("#myDiv").css("border", "3px solid red");
+    $(".myDiv2").css("color", "yellow");
+    $(".myDiv2").css("border", "5px solid green");
+    $(".firstList").css("border", "5px solid pink");
+    $(".codeup").css("border", "1px dashed red");
+    $(".codeup").css("padding", "20px");
+    $(".codeup").css("margin", "10px");
+    $(".codeup").css("font-size", "20px");
+    $("h1, ul, li, title, div").css("background-color", "lightblue");
+
+
 </script>
 </body>
 </html>
