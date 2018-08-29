@@ -8,10 +8,10 @@
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <style type="text/css">
-        #newsletter {
-            color: gray;
-            border: 3px solid white;
-        }
+        /*#newsletter {*/
+            /*color: gray;*/
+            /*border: 3px solid white;*/
+        /*}*/
 
         #halfHeader {
             text-align: center;
@@ -32,72 +32,73 @@
             font-weight: 900;
         }
 
-        /* Bonuses */
-
         .frame {
-            border: 10px solid brown;
+            border: 10px solid yellow;
             height: 250px;
         }
 
         .picture1 {
-            background-image: url("./images/denali1.jpg");
+            background-image: url("./images/sunset1.jpg");
             background-size: cover;
         }
 
         .picture2 {
-            background-image: url("./images/denali2.jpg");
+            background-image: url("./images/sunset2.jpg");
             background-size: cover;
         }
 
         .picture3 {
-            background-image: url("./images/denali3.jpg");
+            background-image: url("./images/mountain3.jpg");
             background-size: cover;
         }
-
     </style>
 </head>
-<body>
 
+<body>
 <main class="container">
 
+        <h1><b>Top Ten FAQ's about National Park Service!!!</b></h1>
 
-    <!-- Bonuses -->
+        <h3>Garner State Park</h3>
+        <ul>
+            <li>Two German immigrant families, the Magers and the Streibs, settled on land that later became Garner State Park.</li>
+            <li>The Magers family, German immigrants who settled in this area, opened part of their land for camping in the 1920s.</li>
+            <li>For thousands of years, the Frio River has enticed people to its banks. Between 10,000 and 12,000 years ago.</li>
+            <li>Prehistoric people camped in the area which came for the abundant game, useful plants and stone for making tools.</li>
+        </ul>
 
-    <!-- modal -->
-    <!-- <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="myModal">
-        <div class=" modal-dialog modal-md" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h2 class="text-center">Please Register</h2>
-                </div>
-            </div>
-        </div>
-    </div> -->
+        <h3>McKinney Falls State Park</h3>
+        <ul>
+            <li>Humans began occupying this area about 8,750 years ago.</li>
+            <li>The park officially opened to the public in 1976. Enjoy fishing, hiking, swimming, camping and more when you visit the park today.</li>
+            <li>Traders used the routes of McKinney for commerce.</li>
+            <li>Some traders may have become part of modern tribes in Texas, such as the Tonkawa.</li>
+        </ul>
 
-    <!-- alert box -->
-    <!-- <div id="alert" class="alert alert-warning alert-dismissible" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        Would you like to sign up for our newsletter?
-    </div> -->
+        <h3>Lost Maples State Natural Area</h3>
+        <ul>
+            <li>The land for Lost Maples State Natural Area was acquired by the state of Texas in 1973 and 1974, and was opened to the public in 1979.</li>
+            <li>Much of the area's limestone bedrock is exposed on elevated terrain, which has a shallow, discontinuous cover of dark gray stony clay (Eckrant series).</li>
+            <li>The 2,906-acre reserve contains 11 miles of hiking trails, 30 campsites, and eight primitive camping areas.</li>
+            <li>Geology - Despite a high clay content in most cases, poorly drained soils are too inextensive to be mapped.</li>
+        </ul>
+
+    <!--Button to highlight last li in UL-->
+    <button id="highlightBtn">Highlight the last li</button>
+
     <div id="halfHeader">
-        <h1><b>Top Ten FAQ's about Glacier National Park!!!</b></h1>
-        <div>
-            <h1><i id="newsletter">Would you like to sign up for our newsletter?</i><span><sup>X</sup></span></h1>
-        </div>
-        <h2 id="register">REGISTER NOW!</h2>
+        <!--<div>-->
+            <!--<h1><i id="newsletter">Would you like to sign up for our newsletter?</i><span><sup>X</sup></span></h1>-->
+        <!--</div>-->
+        <!--<h2 id="register">REGISTER NOW!</h2>-->
         <br>
         <button id="toggleAnswersBtn">Toggle Answers</button>
-
         <dl>
-            <dt>Where is Glacier National Park located?</dt>
-            <dd class="invisible">Glacier National Park is located in northwestern Montana on the U.S./Canadian border.
-                Access to the park from the east and west is along U.S. Highway 2. Park headquarters is located in West
-                Glacier.
+            <dt>Who is the director of the The National Park Service?</dt>
+            <dd class="invisible"><img src="images/will-farrell.jpg">
             </dd>
-            <dt>When is the park open?</dt>
-            <dd class="invisible">Glacier National Park is open year-round, 24 hours a day. In the fall winter and
-                spring,
-                some roads are inaccessible by car due to snow.
+            <dt>What government agency oversees the National Park Service?</dt>
+            <dd class="invisible">The National Park Service is a bureau of the Department of the Interior. Directly overseeing its operation is the department's Assistant Secretary for Fish, Wildlife and Parks.
             </dd>
             <dt>What does it cost to enter the park?</dt>
             <dd class="invisible">Glacier National Park is open year-round, 24 hours a day. In the fall winter and
@@ -148,7 +149,7 @@
 
             </dd>
             <dt>Where are the visitor centers located in the park?</dt>
-            <dd class="invisible slowDown">Visitor centers are located in Apgar, Logan Pass, and St. Mary. Each of these
+            <dd class="invisible">Visitor centers are located in Apgar, Logan Pass, and St. Mary. Each of these
                 visitor
                 centers, as well as the Many Glacier and Two Medicine Ranger Stations, have park rangers on duty
                 throughout
@@ -157,7 +158,7 @@
 
             </dd>
             <dt>Do you have campgrounds in the park? Can I make a reservation?</dt>
-            <dd class="invisible slowDown">Glacier National Park has 13 campgrounds, which provide just over 1000
+            <dd class="invisible">Glacier National Park has 13 campgrounds, which provide just over 1000
                 campsites. Most of
                 the campgrounds are operated on a "first come, first serve" basis. Fish Creek and St. Mary Campgrounds
                 will
@@ -167,13 +168,13 @@
                 Winter primitive camping is available in the Apgar Picnic Area and in the St. Mary Campground.
             </dd>
             <dt>Is it possible to reserve a backcountry campsite?</dt>
-            <dd class="invisible slowDown">Reservations for backcountry campsites may be made in advance, beginning
+            <dd class="invisible">Reservations for backcountry campsites may be made in advance, beginning
                 April 1 for the
                 upcoming summer. For further information on backcountry camping and for making reservations, visit our
                 website section on Backcountry Camping.
             </dd>
             <dt>Can I drive my RV along the Going-to-the-Sun Road?</dt>
-            <dd class="invisible slowDown">Vehicles, and vehicle combinations, longer than 21 feet (including bumpers)
+            <dd class="invisible">Vehicles, and vehicle combinations, longer than 21 feet (including bumpers)
                 or wider than
                 8 feet (including mirrors) are prohibited between Avalanche Campground and the Sun Point parking area.
                 You
@@ -184,117 +185,59 @@
         </dl>
     </div>
 
-
-    <!-- jQuery Traversal Exercise -->
-
-    <h3>Denali National Park</h3>
-    <ul>
-        <li>DNP is home to the highest peak in North America, Denali. Called "The High One" in language of the
-            Athabascan tribe, this towering peak stands at 20,320 feet above sea level.
-        </li>
-        <li>The year of 1910 marked the first time that anyone had successfully summited Denali. It was a group of local
-            residents who celebrated with hot chocolate and donuts.
-        </li>
-        <li>Sable Pass inside DNP is known to be the best area to spot massive grizzly bears.</li>
-        <li>There are 169 different bird species, 39 mammal species, 14 fish species, and one species of amphibian known
-            in Denali, whilst the park is also home to 1,500 species of vascular plants, lichens and mosses.
-        </li>
-    </ul>
-
-
-    <h3>Yellowstone National Park</h3>
-    <ul>
-        <li>World's First National Park.</li>
-        <li>A designated World Heritage Site and designated Biosphere Reserve.</li>
-        <li>3,472 square miles or 8,987 square km.</li>
-        <li>96 % in Wyoming an 3 % in Montana.</li>
-    </ul>
-
-    <h3>Yosemite National Park</h3>
-    <ul>
-        <li>El Capitan is the largest granite monolith in the world. It rises more than 3,000 feet above the valley
-            floor and is a favorite for experienced rock climbers.
-        </li>
-        <li>Yosemite Falls: This is the tallest waterfall in North America. Snow runoff cascades down the 2,425 foot
-            drop, with peak flow in May. In winter, an ice cone is often visible at the top of the falls.
-        </li>
-        <li>Giant Sequoias and Mariposa Grove: Mariposa Grove contains about 500 mature giant sequoias.</li>
-        <li>There are 840 miles of trails to hike in Yosemite National Park</li>
-    </ul>
-
-    <button id="highlightBtn">Highlight</button>
-
-    <!-- jQuery Traversal Bonus -->
+    <!-- Bonus -->
     <div class="row">
+        <!--Using Bootstrap-->
         <div class="col-md-4">
             <div class="frame picture1"></div>
-            <button id="leftSwapBtn" class="pictureBtn btn btn-warning center-block">Swap</button>
+            <button id="leftSwapBtn" class="pictureBtn btn btn-success center-block">Swap</button>
         </div>
         <div class="col-md-4">
             <div class="frame picture2"></div>
-            <button id="middleSwapBtn" class="pictureBtn btn btn-warning center-block">Swap</button>
+            <button id="middleSwapBtn" class="pictureBtn btn btn-success center-block">Swap</button>
         </div>
         <div class="col-md-4">
             <div class="frame picture3"></div>
-            <button id="rightSwapBtn" class="pictureBtn btn btn-warning center-block">Swap</button>
+            <button id="rightSwapBtn" class="pictureBtn btn btn-success center-block">Swap</button>
         </div>
     </div>
 
 </main>
 
-
 <script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
-<!-- Bootstrap JS -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous"></script>
 
 <script type="text/javascript">
-
     // Traversal exercise
     $(document).ready(function () {
-
         "use strict";
 
-        // ============================================== For Attributes and CSS Lesson
-
-        $('#toggleAnswersBtn').click(function (e) {
-            $("dd").toggleClass("invisible");
+        // Highlight last li of each ul element
+        var highLightBtn = $('#highlightBtn');
+        highLightBtn.click(function () {
+            //using '.each' function to highlight the last li by calling to the 'ul' element then calling the last of the children
+            $('ul').each(function (index, element) {
+                $(element).children().last().css("background-color", "yellow");
+            });
         });
 
-        // bonus
         $("dt").click(function () {
             $(this).css("background-color", "yellow");
         });
 
-        // ============================================== For Traversal Lesson
-
-        // Highlight last li of each ul element
-        var highLightBtn = $('#highlightBtn');
-
-
-        highLightBtn.click(function () {
-
-            $('ul').each(function (index, element) {
-                $(element).children().last().css("background-color", "yellow");
-            });
-
-        });
-
 
         // Make the ul li's bold when clicking the corresponding h3
+
         $('h3').click(function () {
             $(this).next().children().css("font-weight", "bold");
         });
 
 
         // Make the first li turn blue when clicking an li in a given ul
+        //Making the the first li blue by 'click'ing the 'li'
         $('li').click(function () {
             $(this).parent().children().first().css("color", "blue");
         });
 
-
-        // =============================================== TRAVERSAL BONUS
 
         $('#leftSwapBtn').click(function () {
             var oldClass = $(this).prev().attr("class").split(" ")[1];
@@ -319,27 +262,30 @@
             $(this).parent().prev().children().first().attr("class", "frame " + oldClass)
         });
 
-        // ============================================ jQuery Effects Lesson
+        $('#toggleAnswersBtn').click(function (e) {
+            $("dd").toggleClass("invisible");
+        });
+
 
         // click X to hide the div containing h1 and span elements
-        $("span").click(function () {
-            $(this).parent().hide();
-        });
+        // $("span").click(function () {
+        //     $(this).parent().hide();
+        // });
 
         // click h3 to toggle a slide effect for the unordered list after the clicked h3
-        $("ul").hide();
-        $("h3").click(function () {
-            $(this).next().slideToggle();
-        });
+        // $("ul").hide();
+        // $("h3").click(function () {
+        //     $(this).next().slideToggle();
+        // });
 
         // fade h2 in after 2 seconds
-        $("#register").hide().delay(1500).fadeIn();
+        // $("#register").hide().delay(1500).fadeIn();
 
 
         // BONUSES
 
         // Fade in the register alert
-        $("#alert").hide().delay(2000).fadeIn();
+        // $("#alert").hide().delay(2000).fadeIn();
 
         // Pop up modal
         setTimeout(function () {
