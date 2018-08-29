@@ -5,10 +5,9 @@ $(function () {
 
 
     $("p").dblclick(function () {
-        $("p").css("font-size", "12px");
-    }, function () {
         $("p").css("font-size", "18px");
     });
+
 
 
     $("#kevinCar").hover(function () {
