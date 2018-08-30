@@ -9,7 +9,6 @@
 <div class="container">
 
 
-
     <h1>My Tool Store</h1>
     <button id="update" class="btn btn-success">Update</button>
     <table id="products" class="table table-hover table-striped">
@@ -32,18 +31,18 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <script>
-    (function() {
+    (function () {
         "use strict";
 
         var updateBtn = $("#update");
 
         // TODO: Create an ajax GET request for /data/inventory.json
-        var onSuccess = function(tools){
+        var onSuccess = function (tools) {
             var html = "";
 
             $("#insertProducts").empty();
 
-            tools.forEach(function(tool){
+            tools.forEach(function (tool) {
 
                 html += "<tr>" +
                     "<td>" + tool.title + "</td>" +
@@ -56,13 +55,13 @@
             $("#insertProducts").append(html);
         };
 
-        function loadData(){
+        function loadData() {
             $.get("data/inventory.json").done(onSuccess);
         }
 
         loadData();
 
-        updateBtn.click(function(){
+        updateBtn.click(function () {
             loadData();
         });
 
