@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to My Website!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+</head>
+<body>
+<ul class="nav justify-content-end">
+    <li class="nav-item">
+        <a class="nav-link active" href="#">Home</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Mission</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Your Account</a>
+    </li>
+</ul>
+<div class="jumbotron">
+    <h1 class="display-4">Newest Products!</h1>
+    <p class="lead">Check our newest product model(JJ-354A)</p>
+    <hr class="my-4">
+    <p>The model(JJ-354A) is selling faster than ever before!</p>
+    <p class="lead">
+        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    </p>
+</div>
+<main id="halfHeader">
+    <div>
+        <h2><i id="subscribe">Sign up for our subscription?</i><span><sup>x</sup></span></h2>
+    </div>
+</main>
+<script>
+    $("span").click(function() {
+        $(this).parent().hide();
+    });
+</script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+</html>

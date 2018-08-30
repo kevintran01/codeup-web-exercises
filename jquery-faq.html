@@ -55,7 +55,7 @@
 </head>
 
 <body>
-<div id="halfHeader">
+<main id="halfHeader">
     <div>
         <h1><i id="newsletter">Would you like to sign up for our newsletter?</i><span><sup>X</sup></span></h1>
     </div>
@@ -69,10 +69,12 @@
             <li>Two German immigrant families, the Magers and the Streibs, settled on land that later became Garner
                 State Park.
             </li>
-            <li>The Magers family, German immigrants who settled in this area, opened part of their land for camping in
+            <li>The Magers family, German immigrants who settled in this area, opened part of their land for camping
+                in
                 the 1920s.
             </li>
-            <li>For thousands of years, the Frio River has enticed people to its banks. Between 10,000 and 12,000 years
+            <li>For thousands of years, the Frio River has enticed people to its banks. Between 10,000 and 12,000
+                years
                 ago.
             </li>
             <li>Prehistoric people camped in the area which came for the abundant game, useful plants and stone for
@@ -83,7 +85,8 @@
         <h3>McKinney Falls State Park</h3>
         <ul>
             <li>Humans began occupying this area about 8,750 years ago.</li>
-            <li>The park officially opened to the public in 1976. Enjoy fishing, hiking, swimming, camping and more when
+            <li>The park officially opened to the public in 1976. Enjoy fishing, hiking, swimming, camping and more
+                when
                 you visit the park today.
             </li>
             <li>Traders used the routes of McKinney for commerce.</li>
@@ -92,10 +95,12 @@
 
         <h3>Lost Maples State Natural Area</h3>
         <ul>
-            <li>The land for Lost Maples State Natural Area was acquired by the state of Texas in 1973 and 1974, and was
+            <li>The land for Lost Maples State Natural Area was acquired by the state of Texas in 1973 and 1974, and
+                was
                 opened to the public in 1979.
             </li>
-            <li>Much of the area's limestone bedrock is exposed on elevated terrain, which has a shallow, discontinuous
+            <li>Much of the area's limestone bedrock is exposed on elevated terrain, which has a shallow,
+                discontinuous
                 cover of dark gray stony clay (Eckrant series).
             </li>
             <li>The 2,906-acre reserve contains 11 miles of hiking trails, 30 campsites, and eight primitive camping
@@ -109,10 +114,8 @@
         <!--Button to highlight last li in UL-->
         <button id="highlightBtn">Highlight the last li</button>
     </div>
-</div>
 
-    <div id="halfHeader">
-        <h2 id="register">REGISTER NOW!</h2>
+    <div>
         <br>
         <button id="toggleAnswersBtn">Toggle Answers</button>
         <dl>
@@ -225,99 +228,100 @@
         </div>
     </div>
 
-    </main>
+</main>
 
-    <script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
 
-    <script type="text/javascript">
-        // Traversal exercise
-        $(document).ready(function () {
-            "use strict";
+<script type="text/javascript">
+    // Traversal exercise
+    $(document).ready(function () {
+        "use strict";
 
-            // Highlight last li of each ul element
-            var highLightBtn = $('#highlightBtn');
-            highLightBtn.click(function () {
-                //using '.each' function to highlight the last li by calling to the 'ul' element then calling the last of the children
-                $('ul').each(function (index, element) {
-                    $(element).children().last().css("background-color", "yellow");
-                });
+        // Highlight last li of each ul element
+        var highLightBtn = $('#highlightBtn');
+        highLightBtn.click(function () {
+            //using '.each' function to highlight the last li by calling to the 'ul' element then calling the last of the children
+            $('ul').each(function (index, element) {
+                $(element).children().last().css("background-color", "yellow");
             });
-
-            $("dt").click(function () {
-                $(this).css("background-color", "yellow");
-            });
-
-
-            // Make the ul li's bold when clicking the corresponding h3
-
-            $('h3').click(function () {
-                $(this).next().children().css("font-weight", "bold");
-            });
-
-
-            // Make the first li turn blue when clicking an li in a given ul
-            //Making the the first li blue by 'click'ing the 'li'
-            $('li').click(function () {
-                $(this).parent().children().first().css("color", "blue");
-            });
-
-
-            $('#leftSwapBtn').click(function () {
-                var oldClass = $(this).prev().attr("class").split(" ")[1];
-                var newClass = $(this).parent().next().children().first().attr("class").split(" ")[1];
-                $(this).prev().attr("class", "frame " + newClass);
-                $(this).parent().next().children().first().attr("class", "frame " + oldClass)
-            });
-
-            $('#middleSwapBtn').click(function () {
-                var choice = Math.floor(Math.random() * (1 - 0 + 1)) + 0;
-                var frameChoice = (choice) ? $(this).parent().prev() : $(this).parent().next();
-                var oldClass = $(this).prev().attr("class").split(" ")[1];
-                var newClass = frameChoice.children().first().attr("class").split(" ")[1];
-                $(this).prev().attr("class", "frame " + newClass);
-                frameChoice.children().first().attr("class", "frame " + oldClass)
-            });
-
-            $('#rightSwapBtn').click(function () {
-                var oldClass = $(this).prev().attr("class").split(" ")[1];
-                var newClass = $(this).parent().prev().children().first().attr("class").split(" ")[1];
-                $(this).prev().attr("class", "frame " + newClass);
-                $(this).parent().prev().children().first().attr("class", "frame " + oldClass)
-            });
-
-            $('#toggleAnswersBtn').click(function (e) {
-                $("dd").toggleClass("invisible");
-            });
-
-
-            // click X to hide the div containing h1 and span elements
-            $("span").click(function () {
-                $(this).parent().hide();
-            });
-
-            // click h3 to toggle a slide effect for the unordered list after the clicked h3
-            $("ul").hide();
-            $("h3").click(function () {
-                $(this).next().slideToggle();
-            });
-
-            // fade h2 in after 2 seconds
-            $("#register").hide().delay(1500).fadeIn();
-
-
-            // BONUSES
-
-            // Fade in the register alert
-            $("#alert").hide().delay(2000).fadeIn();
-
-            // Pop up modal
-            setTimeout(function () {
-                $("#myModal").modal("show");
-            }, 2000);
-
         });
 
-    </script>
+        $("dt").click(function () {
+            $(this).css("background-color", "yellow");
+        });
+
+
+        // Make the ul li's bold when clicking the corresponding h3
+
+        $('h3').click(function () {
+            $(this).next().children().css("font-weight", "bold");
+        });
+
+
+        // Make the first li turn blue when clicking an li in a given ul
+        //Making the the first li blue by 'click'ing the 'li'
+        $('li').click(function () {
+            $(this).parent().children().first().css("color", "blue");
+        });
+
+
+        $('#leftSwapBtn').click(function () {
+            var oldClass = $(this).prev().attr("class").split(" ")[1];
+            var newClass = $(this).parent().next().children().first().attr("class").split(" ")[1];
+            $(this).prev().attr("class", "frame " + newClass);
+            $(this).parent().next().children().first().attr("class", "frame " + oldClass)
+        });
+
+        $('#middleSwapBtn').click(function () {
+            var choice = Math.floor(Math.random() * (1 - 0 + 1)) + 0;
+            var frameChoice = (choice) ? $(this).parent().prev() : $(this).parent().next();
+            var oldClass = $(this).prev().attr("class").split(" ")[1];
+            var newClass = frameChoice.children().first().attr("class").split(" ")[1];
+            $(this).prev().attr("class", "frame " + newClass);
+            frameChoice.children().first().attr("class", "frame " + oldClass)
+        });
+
+        $('#rightSwapBtn').click(function () {
+            var oldClass = $(this).prev().attr("class").split(" ")[1];
+            var newClass = $(this).parent().prev().children().first().attr("class").split(" ")[1];
+            $(this).prev().attr("class", "frame " + newClass);
+            $(this).parent().prev().children().first().attr("class", "frame " + oldClass)
+        });
+
+
+        //dt/dd
+        $('#toggleAnswersBtn').click(function (e) {
+            $("dd").toggleClass("invisible");
+        });
+
+
+        // click X to hide the div containing h1 and span elements
+        $("span").click(function () {
+            $(this).parent().hide();
+        });
+
+        // click h3 to toggle a slide effect for the unordered list after the clicked h3
+        $("ul").hide();
+        $("h3").click(function () {
+            $(this).next().slideToggle();
+        });
+
+        // fade h2 in after 2 seconds
+        $("#register").hide().delay(5000).fadeIn();
+
+
+        // BONUSES
+
+        // Fade in the register alert
+        $("#alert").hide().delay(5000).fadeIn();
+
+        // Pop up modal
+        setTimeout(function () {
+            $("#myModal").modal("show");
+        }, 2000);
+    });
+
+</script>
 
 </body>
 </html>
