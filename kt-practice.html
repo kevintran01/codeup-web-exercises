@@ -7,10 +7,14 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
 </head>
 <body>
-<ul class="nav justify-content-end">
+<header>
+    <div>
+        <h2><i id="subscribe">Sign up for our newsletter <a href="#">here!</a></i><span><sup>x</sup></span></h2>
+    </div>
+</header>
+<ul class="nav justify-content-end border-top">
     <li class="nav-item">
         <a class="nav-link active" href="#">Home</a>
     </li>
@@ -33,24 +37,67 @@
         <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
     </p>
 </div>
-<main id="halfHeader">
-    <div>
-        <h2><i id="subscribe">Sign up for our subscription?</i><span><sup>x</sup></span></h2>
-    </div>
-</main>
-<script>
-    $("span").click(function() {
-        $(this).parent().hide();
-    });
-</script>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
+<div class="container">
+    <h1>My Shopping Cart</h1>
+    <button id="update" class="btn btn-dark">Refresh</button>
+    <table id="products" class="table table-hover table-striped">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Type</th>
+        </tr>
+        </thead>
+        <tbody id="insertProducts"></tbody>
+    </table>
+</div>
+<script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+<script>
+    (function () {
+        "use strict";
+
+        var updateBtn = $("#update");
+
+        var onSuccess = function (tools) {
+            var html = "";
+
+            $("#insertProducts").empty();
+
+            tools.forEach(function (tool) {
+
+                html += "<tr>" +
+                    "<td>" + tool.title + "</td>" +
+                    "<td>" + tool.quantity + "</td>" +
+                    "<td>" + tool.price + "</td>" +
+                    "<td>" + tool.categories + "</td>" +
+                    "</tr>";
+            });
+
+            $("#insertProducts").append(html);
+        };
+
+        function loadData() {
+            $.get("data/inventoryShoe.json").done(onSuccess);
+        }
+
+        loadData();
+
+        updateBtn.click(function () {
+            loadData();
+        });
+
+        $("span").click(function () {
+            $(this).parent().hide();
+        });
+
+    })();
+</script>
 </body>
 </html>

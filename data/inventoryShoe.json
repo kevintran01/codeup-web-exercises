@@ -1,0 +1,34 @@
+[
+  {
+    "title": "Mens 990v4 Made in US",
+    "quantity": 1,
+    "categories": [
+      "Running"
+    ],
+    "price": 120
+  },
+  {
+    "title": "Men's Fresh Foam Cruz v2 Knit",
+    "quantity": 5,
+    "categories": [
+      "Lifestyle"
+    ],
+    "price": 100
+  },
+  {
+    "title": "860-v8",
+    "quantity": 5,
+    "categories": [
+      "Training"
+    ],
+    "price": 200
+  },
+  {
+    "title": "Men's 574",
+    "quantity": 2,
+    "categories": [
+      "Walking"
+    ],
+    "price": 125
+  }
+]
