@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to My Website!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<h1>ES6 Tutorial</h1>
+<script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<script>
+    "use strict";
+    //Understanding let over var
+    let show = "Breaking Bad";
+
+    function pulpFiction() {
+        let show = 'Pulp Fiction';
+        return show;
+    }
+    console.log(show);
+    console.log(pulpFiction());
+    console.log(show);
+
+    function kevinFunction() {
+        let isHorse = true;
+        let saying = "Bacon is good";
+        console.log('\nBefore if:', saying);
+
+        if(isHorse){
+            let saying = "I am a horse";
+        }
+        console.log("After if: ", saying);
+    }
+    kevinFunction();
+
+
+    //Arrow Functions
+    function circleArea1(r) {
+        const pi = 3.14;
+        return pi * r * r;
+    }
+
+    let circleArea2 = (r) => {
+        const pi = 3.14;
+        return pi * r * r;
+    };
+
+    let circleArea3 = r => 3.14 * r * r;
+
+    console.log(circleArea1(7));
+    console.log(circleArea2(7));
+    console.log(circleArea3(7));
+</script>
+</body>
+</html>
