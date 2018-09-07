@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Methods Exercise</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <style type="text/css">
+        #newsletter {
+            color: gray;
+            border: 3px solid white;
+        }
+
+        #halfHeader {
+            text-align: center;
+        }
+
+        .invisible {
+            display: none;
+        }
+
+        body {
+            background-color: lightblue;
+        }
+
+        dt {
+            text-decoration: underline;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-weight: 900;
+        }
+
+        .frame {
+            border: 10px solid yellow;
+            height: 250px;
+        }
+
+        .picture1 {
+            background-image: url("./images/sunset1.jpg");
+            background-size: cover;
+        }
+
+        .picture2 {
+            background-image: url("./images/sunset2.jpg");
+            background-size: cover;
+        }
+
+        .picture3 {
+            background-image: url("./images/mountain3.jpg");
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+<main id="halfHeader">
+    <div>
+        <h1><i id="newsletter">Would you like to sign up for our newsletter?</i><span><sup>X</sup></span></h1>
+    </div>
+    <h2 id="register">REGISTER NOW!</h2>
+    <div class="container">
+
+        <h1><b>Top Ten FAQ's about National Park Service!!!</b></h1>
+
+        <h3>Garner State Park</h3>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+
+        <h3>McKinney Falls State Park</h3>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+
+        <h3>Lost Maples State Natural Area</h3>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+
+        <!--Button to highlight last li in UL-->
+        <button id="highlightBtn">Highlight the last li</button>
+    </div>
+
+    <div>
+        <br>
+        <button id="toggleAnswersBtn">Toggle Answers</button>
+        <dl>
+            <dt>1</dt>
+            <dd class="invisible">1</dd>
+            <dt>2</dt>
+            <dd class="invisible">2</dd>
+            <dt>3</dt>
+            <dd class="invisible">3</dd>
+            <dt>4</dt>
+            <dd class="invisible">4</dd>
+            <dt>5</dt>
+            <dd class="invisible">5</dd>
+            <dt>6</dt>
+            <dd class="invisible">6</dd>
+            <dt>3</dt>
+            <dd class="invisible">3</dd>
+            <dt>4</dt>
+            <dd class="invisible">4</dd>
+            <dt>5</dt>
+            <dd class="invisible">5</dd>
+            <dt>6</dt>
+            <dd class="invisible">6</dd>
+        </dl>
+    </div>
+
+    <!-- Bonus -->
+    <div class="row">
+        <!--Using Bootstrap-->
+        <div class="col-md-4">
+            <div class="frame picture1"></div>
+            <button id="leftSwapBtn" class="pictureBtn btn btn-success center-block">Swap</button>
+        </div>
+        <div class="col-md-4">
+            <div class="frame picture2"></div>
+            <button id="middleSwapBtn" class="pictureBtn btn btn-success center-block">Swap</button>
+        </div>
+        <div class="col-md-4">
+            <div class="frame picture3"></div>
+            <button id="rightSwapBtn" class="pictureBtn btn btn-success center-block">Swap</button>
+        </div>
+    </div>
+
+</main>
+
+<script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<script type="text/javascript">
+    // Traversal exercise
+    $(document).ready(function () {
+        "use strict";
+
+        // Highlight last li of each ul element
+        var highLightBtn = $('#highlightBtn');
+        highLightBtn.click(function () {
+            //using '.each' function to highlight the last li by calling to the 'ul' element then calling the last of the children
+            $('ul').each(function (index, element) {
+                $(element).children().last().css("background-color", "yellow");
+            });
+        });
+
+        $("dt").click(function () {
+            $(this).css("background-color", "yellow");
+        });
+
+
+        // Make the ul li's bold when clicking the corresponding h3
+
+        $('h3').click(function () {
+            $(this).next().children().css("font-weight", "bold");
+        });
+
+
+        // Make the first li turn blue when clicking an li in a given ul
+        //Making the the first li blue by 'click'ing the 'li'
+        $('li').click(function () {
+            $(this).parent().children().first().css("color", "blue");
+        });
+
+
+        $('#leftSwapBtn').click(function () {
+            var oldClass = $(this).prev().attr("class").split(" ")[1];
+            var newClass = $(this).parent().next().children().first().attr("class").split(" ")[1];
+            $(this).prev().attr("class", "frame " + newClass);
+            $(this).parent().next().children().first().attr("class", "frame " + oldClass)
+        });
+
+        $('#middleSwapBtn').click(function () {
+            var choice = Math.floor(Math.random() * (1 - 0 + 1)) + 0;
+            var frameChoice = (choice) ? $(this).parent().prev() : $(this).parent().next();
+            var oldClass = $(this).prev().attr("class").split(" ")[1];
+            var newClass = frameChoice.children().first().attr("class").split(" ")[1];
+            $(this).prev().attr("class", "frame " + newClass);
+            frameChoice.children().first().attr("class", "frame " + oldClass)
+        });
+
+        $('#rightSwapBtn').click(function () {
+            var oldClass = $(this).prev().attr("class").split(" ")[1];
+            var newClass = $(this).parent().prev().children().first().attr("class").split(" ")[1];
+            $(this).prev().attr("class", "frame " + newClass);
+            $(this).parent().prev().children().first().attr("class", "frame " + oldClass)
+        });
+
+
+        //dt/dd
+        $('#toggleAnswersBtn').click(function (e) {
+            $("dd").toggleClass("invisible");
+        });
+
+
+        // click X to hide the div containing h1 and span elements
+        $("span").click(function () {
+            $(this).parent().hide();
+        });
+
+        // click h3 to toggle a slide effect for the unordered list after the clicked h3
+        $("ul").hide();
+        $("h3").click(function () {
+            $(this).next().slideToggle();
+        });
+
+        // fade h2 in after 2 seconds
+        $("#register").hide().delay(5000).fadeIn();
+
+
+        // BONUSES
+
+        // Fade in the register alert
+        $("#alert").hide().delay(5000).fadeIn();
+
+        // Pop up modal
+    });
+
+</script>
+
+</body>
+</html>

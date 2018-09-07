@@ -96,7 +96,54 @@
         $("span").click(function () {
             $(this).parent().hide();
         });
+        var s = ['1', '2', '3', '4'];
+        var sh = [['1', '2', '3', '4']];
+        var sha = ['1', '2', '3', '4'];
+        var names = ['Jenny', 'Tiffany', 'Alana'];
+        var names1 = ['Jenny', 'Tiffany', 'Alana', 'Jason'];
+        var shapes = [['1', '2']['3', '4']];
+        console.log(s.length);
+        console.log(sh.length);
+        console.log("The first number is: " + sha[0]);
+        console.log("The second number is: " + sha[1]);
+        console.log("concatanate the first, second and third number is: " + sha[0], sha[1] + sha[2]);
+        console.log("My family: " + names[0] + names[1] + names[2]);
+        console.log(shapes.length);
+        for (var i = 0; i < names1.length; i++) {
+            console.log("The name at index " + i + "is: " + names1[i]);
+        }
 
+        for (let i = 1; i <= 10; i++) {
+            console.log(i);
+        }
+        const myName = "Kevin";
+        let pizzaPreference = "pina";
+        console.log("My name is " + myName + ", and i prefer pizza with the following toppings:" + pizzaPreference);
+        console.log(`my name is ${myName}, and I like ${pizzaPreference} pizza`);
+
+        var url = "https://www.google.com";
+
+        let htmlString = `<html><a href="${url}">My site</a></html>`;
+
+        document.body.innerHTML = htmlString;
+
+
+        let items = "Crap and Stuff";
+        for(let item of items){
+            console.log(item);
+        }
+
+        // arrow functions
+        // var sayHi = function(name) {
+        //     return `Hello, ${name}!`;
+        // };
+
+        var sayHi = name => `Hello, ${name}!`;
+        // alert(sayHi("Kevin"));
+
+        var fullName = (firstName, lastName) => `hello to ${firstName} ${lastName}`;
+        alert(fullName("Kevin", "Tran"));
+        [1, 2, 3, 4, 5].forEach(num => console.log(num + 2));
     })();
 </script>
 </body>
