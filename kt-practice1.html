@@ -59,6 +59,32 @@
     console.log(circleArea1(7));
     console.log(circleArea2(7));
     console.log(circleArea3(7));
+
+    var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    var evens = numbers.filter(function(n) {
+       return n % 2 === 0;
+    });
+    console.log(evens);
+
+    const numbers1 = [1, 2, 3, 4, 5];
+
+    const sum = numbers1.reduce((accumulation, currentNumber) => {
+        return accumulation + currentNumber;
+    }, 0);
+    console.log(sum);
+
+    const salesPeople = [
+        {name: 'Jim Halpert', sales: 100},
+        {name: 'Dwight Schrute', sales: 50},
+        {name: 'Andy Bernard', sales: 150},
+    ];
+
+    const totalSales = salesPeople.reduce((total, person) => {
+        return total + person.sales;
+    }, 0);
+    console.log(totalSales);
+
+
 </script>
 </body>
 </html>
