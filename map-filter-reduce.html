@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>map-filter-reduce</title>
+</head>
+<body>
+
+<button id="filter-by-language" type="button">Show users with more than 2 languages</button>
+<button type="button" id="count-different-languages">How many languages do we know?</button>
+<script>
+    const users = [
+        {
+            name: 'zach',
+            email: 'zach@codeup.com',
+            languages: ['javascript', 'bash']
+        },
+        {
+            name: 'ryan',
+            email: 'ryan@codeup.com',
+            languages: ['clojure', 'javascript']
+        },
+        {
+            name: 'luis',
+            email: 'luis@codeup.com',
+            languages: ['java', 'scala', 'php']
+        },
+        {
+            name: 'fernando',
+            email: 'fernando@codeup.com',
+            languages: ['java', 'php', 'sql']
+        },
+        {
+            name: 'justin',
+            email: 'justin@codeup.com',
+            languages: ['html', 'css', 'javascript', 'php']
+        }
+    ];
+
+    console.log(users); //input
+
+    // const names = users.map(user => user.name);
+    const listItems = users
+        .map(user => user.name)  // push
+        .map(name => name[0].toUpperCase() + name.substring(1)) // push
+        .map(function (capitalizedName) { // an array.push() is implied
+            return `<li>${capitalizedName}</li>`;
+        })
+    ;
+    document.write(`<ul>${listItems.join('')}</ul>`);
+
+    document.getElementById('filter-by-language').addEventListener('click', () => {
+        console.log('filter');
+
+        const listItems = users
+            .filter(user => user.languages.length > 2) // knows more than 2 languages
+            .map(user => user.name)  // push
+            .map(name => name[0].toUpperCase() + name.substring(1)) // push
+            .map(capitalizedName => `<li>${capitalizedName}</li>`);
+        document.write(`<ul>${listItems.join('')}</ul>`);
+
+    });
+
+    document.getElementById('count-different-languages').addEventListener('click', () => {
+        console.log('different languages');
+        const allLanguages = users
+            .map(user => user.languages) // userLanguages
+            .reduce((allLanguages, userLanguages) => allLanguages.concat(userLanguages), [])
+            .filter((language, index, allLanguages) => allLanguages.indexOf(language) === index)
+        ;
+        const differentLanguages = allLanguages.length;
+        document.write(`we all know <strong>${differentLanguages}</strong> languages.`);
+
+        console.log(counter.length);
+    });
+
+    console.log(listItems);
+
+    const users1 = [
+        {
+            name: 'zach',
+            email: 'zach@codeup.com',
+            languages: ['javascript', 'bash']
+        },
+        {
+            name: 'ryan',
+            email: 'ryan@codeup.com',
+            languages: ['clojure', 'javascript']
+        },
+        {
+            name: 'luis',
+            email: 'luis@codeup.com',
+            languages: ['java', 'scala', 'php']
+        },
+        {
+            name: 'fernando',
+            email: 'fernando@codeup.com',
+            languages: ['java', 'php', 'sql']
+        },
+        {
+            name: 'justin',
+            email: 'justin@codeup.com',
+            languages: ['html', 'css', 'javascript', 'php']
+        }
+    ];
+
+    console.log(users1); //input
+
+    // const names = users.map(user => user.name);
+    const listItems1 = users1
+        .map(user => user.name)  // push
+        .map(name => name[0].toUpperCase() + name.substring(1)) // push
+        .map(function (capitalizedName) { // an array.push() is implied
+            return `<li>${capitalizedName}</li>`;
+        })
+    ;
+    document.write(`<ul>${listItems1.join('')}</ul>`);
+
+    document.getElementById('filter-by-language').addEventListener('click', () => {
+        console.log('filter');
+
+        const listItems1 = users1
+            .filter(user => user.languages.length > 2) // knows more than 2 languages
+            .map(user => user.name)  // push
+            .map(name => name[0].toUpperCase() + name.substring(1)) // push
+            .map(capitalizedName => `<li>${capitalizedName}</li>`);
+        document.write(`<ul>${listItems1.join('')}</ul>`);
+
+    });
+
+    document.getElementById('count-different-languages').addEventListener('click', () => {
+        console.log('different languages');
+        const allLanguages = users1
+            .map(user => user.languages) // userLanguages
+            .reduce((allLanguages, userLanguages) => allLanguages.concat(userLanguages), [])
+            .filter((language, index, allLanguages) => allLanguages.indexOf(language) === index)
+        ;
+        const differentLanguages = allLanguages.length;
+        document.write(`we all know <strong>${differentLanguages}</strong> languages.`);
+
+        console.log(counter.length);
+    });
+
+    console.log(listItems1);
+
+</script>
+</body>
+</html>
