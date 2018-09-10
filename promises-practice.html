@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promises</title>
+</head>
+<body>
+<h1>Promises</h1>
+<p>Promises are a way of designating or not something has occurred</p>
+<ol>
+    <li>Pending</li>
+    <li>Accepted</li>
+    <li>Rejected</li>
+</ol>
+<script>
+    var time = "now";
+    setTimeout(function () {
+        time = "later";
+    }, 1000);
+    console.log(time);
+
+    const myPromise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (Math.random() > 0.5) {
+                resolve();
+            } else {
+                reject();
+            }
+        }, 1500);
+    });
+
+    myPromise.then(() => {
+       console.log("The coin flip was heads");
+    });
+
+    myPromise.catch(() => {
+       console.log("The promise rejected and that's what calls the .catch method");
+    });
+
+    console.log(myPromise); // a pending promise
+
+    let batteryPromise = navigator.getBattery();
+    batteryPromise.then(function (battery) {
+        console.log(battery);
+    });
+
+    batteryPromise.catch((battery) => {
+       console.log(battery);
+    });
+
+    function countToOneHundredMillion() {
+        return new Promise((resolve, reject) => {
+            for (let i = 1; i <= 10000; i++) {
+                console.log(i);
+            }
+            resolve("We counted to one hundred million, yay");
+        });
+    }
+    countToOneHundredMillion().then(data => {
+        console.log(data);
+    });
+
+    const getTheUserName = () => {
+        return new Promise((resolve, reject) => {
+            let username = prompt("Please input your username");
+
+            if(!username) {
+                reject("User did not provide their username");
+            }else{
+                resolve(`User provided a username of ${username}`);
+            }
+        });
+    };
+
+    getTheUserName().then(data => console.log(data));
+    getTheUserName().catch(error => console.log(error));
+
+</script>
+</body>
+</html>

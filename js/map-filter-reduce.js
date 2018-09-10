@@ -50,7 +50,7 @@ const total = [1, 2, 3, 4].reduce((accumulator, current) => {
 }, '');
 console.log(total);
 
-const users = [
+const users1 = [
     {
         id: 1,
         name: 'ryan',
@@ -84,20 +84,20 @@ const users = [
 ];
 
 console.log('Users that know at least 3 languages');
-console.log(users.filter(user => user.languages.length >= 3));
+console.log(users1.filter(user => user.languages.length >= 3));
 
 console.log('All the emails');
-console.log(users.map(user => user.email));
+console.log(users1.map(user => user.email));
 
-const result = users.reduce((accumulator, user) => {
+const result1 = users1.reduce((accumulator, user) => {
     accumulator[user.id] = user;
     return accumulator;
 }, {});
-console.log(result);
+console.log(result1);
 
-const total = [1, 2, 3, 4].reduce((accumulator, current) => {
+const total1 = [1, 2, 3, 4].reduce((accumulator, current) => {
     // console.log(accumulator);
     // console.log(current);
     return accumulator + current;
 }, '');
-console.log(total);
+console.log(total1);
