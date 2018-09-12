@@ -30,11 +30,11 @@
     });
 
     myPromise.then(() => {
-       console.log("The coin flip was heads");
+        console.log("The coin flip was heads");
     });
 
     myPromise.catch(() => {
-       console.log("The promise rejected and that's what calls the .catch method");
+        console.log("The promise rejected and that's what calls the .catch method");
     });
 
     console.log(myPromise); // a pending promise
@@ -45,7 +45,7 @@
     });
 
     batteryPromise.catch((battery) => {
-       console.log(battery);
+        console.log(battery);
     });
 
     function countToOneHundredMillion() {
@@ -53,9 +53,10 @@
             for (let i = 1; i <= 10000; i++) {
                 console.log(i);
             }
-            resolve("We counted to one hundred million, yay");
+            resolve("We counted to ten thousand, yay");
         });
     }
+
     countToOneHundredMillion().then(data => {
         console.log(data);
     });
@@ -64,9 +65,9 @@
         return new Promise((resolve, reject) => {
             let username = prompt("Please input your username");
 
-            if(!username) {
+            if (!username) {
                 reject("User did not provide their username");
-            }else{
+            } else {
                 resolve(`User provided a username of ${username}`);
             }
         });

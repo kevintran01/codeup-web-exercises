@@ -45,8 +45,8 @@
         .map(name => name[0].toUpperCase() + name.substring(1)) // push
         .map(function (capitalizedName) { // an array.push() is implied
             return `<li>${capitalizedName}</li>`;
-        })
-    ;
+        });
+
     document.write(`<ul>${listItems.join('')}</ul>`);
 
     document.getElementById('filter-by-language').addEventListener('click', () => {
@@ -112,8 +112,8 @@
         .map(name => name[0].toUpperCase() + name.substring(1)) // push
         .map(function (capitalizedName) { // an array.push() is implied
             return `<li>${capitalizedName}</li>`;
-        })
-    ;
+        });
+
     document.write(`<ul>${listItems1.join('')}</ul>`);
 
     document.getElementById('filter-by-language').addEventListener('click', () => {
@@ -140,11 +140,45 @@
 
         console.log(counter.length);
     });
+
     console.log(listItems1);
 
     let name = 'Codeup';
     name = "Kevin Tran";
     console.log(`Hello, ${name}!`);
+
+
+
+
+
+
+
+
+    function isPrime(value) {
+        for(var i = 2; i < value; i++) {
+            if(value % i === 0) {
+                return false;
+            }
+        }
+        return value > 1;
+    }
+    console.log(isPrime(1));
+
+    const getFib = n => {
+        if (n<=0) return 0;
+        else if (n==1) return [1];
+        else return getFib(n-1)+getFib(n-2);
+    };
+    console.log(getFib(0));
+
+    const getFib = n => {
+        let fib = [];
+        if(n===0)fibs.push(0);
+        else if(n==1) fibs.push(1);
+        else fib = push (getFib(n-1)[]+ getFib([n-2]));
+    };
+    return fibs;
+
 
 </script>
 </body>
