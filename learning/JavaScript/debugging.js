@@ -4045,7 +4045,7 @@ console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3));
 
  Remember to use Read-Search-Ask if you get stuck. Write your own code.         */
 
- function whatIsInAName(collection, source) {
+function whatIsInAName(collection, source) {
     // What's in a name?
     var srcKeys = Object.keys(source);
     return collection.filter(function (obj) {
@@ -4055,7 +4055,10 @@ console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3));
     });
 }
 
- console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" }));
+console.log(whatIsInAName([{first: "Romeo", last: "Montague"}, {first: "Mercutio", last: null}, {
+    first: "Tybalt",
+    last: "Capulet"
+}], {last: "Capulet"}));
 
 /* *******************************************************************************
 ****************************************************************************** */
@@ -4067,7 +4070,7 @@ console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3));
  Remember to use Read-Search-Ask if you get stuck. Try to pair program. Write your own code.        */
 
 function spinalCase(str) {
-   str = str.replace(/([a-z])([A-Z])/g, '$1 $2');
+    str = str.replace(/([a-z])([A-Z])/g, '$1 $2');
     return str.toLowerCase().split(/(?:_| )+/).join('-');
 }
 
@@ -4089,7 +4092,7 @@ console.log(spinalCase('This Is Spinal Tap'));
  Remember to use Read-Search-Ask if you get stuck. Try to pair program. Write your own code.        */
 
 function translatePigLatin(str) {
-    var pigLatin  = '';
+    var pigLatin = '';
     var regex = /[aeiou]/gi;
     if (str[0].match(regex)) {
         pigLatin = str + 'way';
@@ -4123,16 +4126,427 @@ console.log(translatePigLatin("consonant"));
 
  Remember to use Read-Search-Ask if you get stuck. Try to pair program. Write your own code.        */
 
- function myReplace(str, before, after) {
-  var index = str.indexOf(before);
-  if (str[index] === str[index].toUpperCase()) {
-      after = after.charAt(0).toUpperCase() + after.slice(1);
-  }
-  str = str.replace(before, after);
-  return str;
+function myReplace(str, before, after) {
+    var index = str.indexOf(before);
+    if (str[index] === str[index].toUpperCase()) {
+        after = after.charAt(0).toUpperCase() + after.slice(1);
+    }
+    str = str.replace(before, after);
+    return str;
 }
 
- console.log(myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped"));
+console.log(myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped"));
+
+/* *******************************************************************************
+****************************************************************************** */
+
+/**TODO Intermediate Algorithm Scripting: DNA Pairing
+
+ The DNA strand is missing the pairing element. Take each character, get its pair, and return the results as a 2d array.
+
+ Base pairs are a pair of AT and CG. Match the missing element to the provided character.
+
+ Return the provided character as the first element in each array.
+
+ For example, for the input GCG, return [["G", "C"], ["C","G"],["G", "C"]]
+
+ The character and its pair are paired up in an array, and all the arrays are grouped into one encapsulating array.
+
+ Remember to use Read-Search-Ask if you get stuck. Try to pair program. Write your own code.        */
+
+function pairElement(str) {
+    var map = {T: 'A', A: 'T', G: 'C', C: 'G'};
+    var strArr = str.split('');
+    for (var i = 0; i < strArr.length; i++) {
+        strArr[i] = [strArr[i], map[strArr[i]]];
+    }
+    return strArr;
+}
+
+console.log(pairElement("GCG"));
+
+/* *******************************************************************************
+****************************************************************************** */
+
+/**TODO Intermediate Algorithm Scripting: Missing letters
+
+ Find the missing letter in the passed letter range and return it.
+
+ If all letters are present in the range, return undefined.
+
+ Remember to use Read-Search-Ask if you get stuck. Try to pair program. Write your own code.        */
+
+function fearNotLetter(str) {
+    var compare = str.charCodeAt(0), missing;
+    str.split('').map(function (letter, index) {
+        if (str.charCodeAt(index) == compare) {
+            ++compare;
+        } else {
+            missing = String.fromCharCode(compare);
+        }
+    });
+    return missing;
+}
+
+console.log(fearNotLetter("abcdefghj"));
+
+/* *******************************************************************************
+****************************************************************************** */
+
+/**TODO Intermediate Algorithm Scripting: Sorted Union
+
+ Write a function that takes two or more arrays and returns a new array of unique values in the order of the original provided arrays.
+
+ In other words, all values present from all arrays should be included in their original order, but with no duplicates in the final array.
+
+ The unique numbers should be sorted by their original order, but the final array should not be sorted in numerical order.
+
+ Check the assertion tests for examples.
+
+ Remember to use Read-Search-Ask if you get stuck. Try to pair program. Write your own code.        */
+
+function uniteUnique() {
+    var concatArr = [];
+    var i = 0;
+    while (arguments[i]){
+        concatArr = concatArr.concat(arguments[i]); i++;
+    }
+    var uniqueArray = concatArr.filter(function(item, pos) {
+       return concatArr.indexOf(item) == pos;
+    });
+    return uniqueArray;
+}
+
+console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]));
+
+/* *******************************************************************************
+****************************************************************************** */
+
+/**TODO Intermediate Algorithm Scripting: Convert HTML Entities
+
+ Convert the characters &, <, >, " (double quote), and ' (apostrophe), in a string to their corresponding HTML entities.
+
+ Remember to use Read-Search-Ask if you get stuck. Try to pair program. Write your own code.        */
+
+function convertHTML(str) {
+    let htmlEntitles={
+        '&':'&amp;',
+        '<':'&lt;',
+        '>':'&gt;',
+        '"':'&quot;',
+        '\'':"&apos;"
+    };
+    // &colon;&rpar;
+    return str.split('').map(entity => htmlEntitles[entity] || entity).join('');
+}
+
+console.log(convertHTML("Dolce & Gabbana"));
+
+/* *******************************************************************************
+****************************************************************************** */
+
+/**TODO Intermediate Algorithm Scripting: Sum All Odd Fibonacci Numbers
+
+ Given a positive integer num, return the sum of all odd Fibonacci numbers that are less than or equal to num.
+
+ The first two numbers in the Fibonacci sequence are 1 and 1. Every additional number in the sequence is the sum of the
+ two previous numbers. The first six numbers of the Fibonacci sequence are 1, 1, 2, 3, 5 and 8.
+
+ For example, sumFibs(10) should return 10 because all odd Fibonacci numbers less than or equal to 10 are 1, 1, 3, and 5.
+
+ Remember to use Read-Search-Ask if you get stuck. Try to pair program. Write your own code.        */
+
+function sumFibs(num) {
+    var prevNumber = 0;
+    var currNumber = 1;
+    var result = 0;
+    while (currNumber <= num) {
+        if (currNumber % 2 !==0) {
+            result += currNumber;
+        }
+        currNumber += prevNumber;
+        prevNumber = currNumber - prevNumber;
+    }
+    return result;
+}
+
+console.log(sumFibs(1000));
+
+/* *******************************************************************************
+****************************************************************************** */
+
+/**TODO Intermediate Algorithm Scripting: Sum All Primes
+
+ Sum all the prime numbers up to and including the provided number.
+
+ A prime number is defined as a number greater than one and having only two divisors, one and itself. For example,
+ 2 is a prime number because it's only divisible by one and two.
+
+ The provided number may not be a prime.
+
+ Remember to use Read-Search-Ask if you get stuck. Try to pair program. Write your own code.        */
+
+function sumPrimes(num) {
+    function isPrime(number) {
+        for (let i = 2; i < number; i++) {
+            if(number % i === 0 && number!= i) {
+                return false;
+            }
+        }
+        return true;
+    }
+    if (num === 1){
+        return 0;
+    }
+    if(isPrime(num) === false) {
+        return sumPrimes(num - 1);
+    }
+    if(isPrime(num) === true) {
+        return num + sumPrimes(num - 1);
+    }
+}
+
+console.log(sumPrimes(10));
+
+/* *******************************************************************************
+****************************************************************************** */
+
+/**TODO Intermediate Algorithm Scripting: Smallest Common Multiple
+
+ Find the smallest common multiple of the provided parameters that can be evenly divided by both, as well as by all
+ sequential numbers in the range between these parameters.
+
+ The range will be an array of two numbers that will not necessarily be in numerical order.
+
+ For example, if given 1 and 3, find the smallest common multiple of both 1 and 3 that is also evenly divisible by all
+ numbers between 1 and 3. The answer here would be 6.
+
+ Remember to use Read-Search-Ask if you get stuck. Try to pair program. Write your own code.        */
+
+function smallestCommons(arr) {
+    arr.sort(function(a, b) {
+        return b - a;
+    });
+    var newArr = [];
+    for (var i = arr[0]; i >= arr[1]; i--) {
+        newArr.push(i);
+    }
+    var quot = 0;
+    var loop = 1;
+    var n;
+    do {
+        quot = newArr[0] * loop * newArr[1];
+        for (n = 2; n < newArr.length; n++) {
+            if (quot % newArr[n] !== 0) {
+                break;
+            }
+        }
+        loop++;
+    } while (n !== newArr.length);
+    return quot;
+}
+
+
+console.log(smallestCommons([1,5]));
+
+/* *******************************************************************************
+****************************************************************************** */
+
+/**TODO Intermediate Algorithm Scripting: Drop it
+
+ Given the array arr, iterate through and remove each element starting from the first element (the 0 index) until the
+ function func returns true when the iterated element is passed through it.
+
+ Then return the rest of the array once the condition is satisfied, otherwise, arr should be returned as an empty array.
+
+ Remember to use Read-Search-Ask if you get stuck. Try to pair program. Write your own code.        */
+
+function dropElements(arr, func) {
+    return arr.slice(arr.findIndex(func) >= 0 ? arr.findIndex(func): arr.length, arr.length);
+    // Drop them elements.
+}
+
+console.log(dropElements([1, 2, 3, 4], function(n) {return n >= 3; }));
+
+/* *******************************************************************************
+****************************************************************************** */
+
+/**TODO Intermediate Algorithm Scripting: Steamroller
+
+ Flatten a nested array. You must account for varying levels of nesting.
+
+ Remember to use Read-Search-Ask if you get stuck. Try to pair program. Write your own code.        */
+
+function steamrollArray(arr) {
+    let flat = [].concat(...arr);
+    // I'm a steamroller, baby
+    return flat.some(Array.isArray) ? steamrollArray(flat) : flat;
+}
+
+console.log(steamrollArray([1, [2], [3, [[4]]]]));
+
+/* *******************************************************************************
+****************************************************************************** */
+
+/**TODO Intermediate Algorithm Scripting: Binary Agents
+
+ Return an English translated sentence of the passed binary string.
+
+ The binary string will be space separated.
+
+ Remember to use Read-Search-Ask if you get stuck. Try to pair program. Write your own code.        */
+
+function binaryAgent(str) {
+    str = str.split(' ');
+    var power;
+    var decValue = 0;
+    var sentence = '';
+    for (var s = 0; s < str.length; s++) {
+        for (var t = 0; t < str[s].length; t++) {
+            if (str[s][t] == 1) {
+                power = Math.pow(2, +str[s].length - t - 1);
+                decValue += power;
+            }
+        }
+        sentence += (String.fromCharCode(decValue));
+        decValue = 0;
+    }
+    return sentence;
+}
+
+console.log(binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110" +
+    " 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111"));
+
+/* *******************************************************************************
+****************************************************************************** */
+
+/**TODO Intermediate Algorithm Scripting: Everything Be True
+
+ Check if the predicate (second argument) is truthy on all elements of a collection (first argument).
+
+ In other words, you are given an array collection of objects. The predicate pre will be an object property and you
+ need to return true if its value is truthy. Otherwise, return false.
+
+ In JavaScript, truthy values are values that translate to true when evaluated in a Boolean context.
+
+ Remember, you can access object properties through either dot notation or [] notation.
+
+ Remember to use Read-Search-Ask if you get stuck. Try to pair program. Write your own code.        */
+
+function truthCheck(collection, pre) {
+    // Is everyone being true?
+    return collection.every(function (element) {
+        return element.hasOwnProperty(pre) && Boolean(element[pre]);
+    });
+}
+
+console.log(truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex"));
+
+/* *******************************************************************************
+****************************************************************************** */
+
+/**TODO Intermediate Algorithm Scripting: Arguments Optional
+
+ Create a function that sums two arguments together. If only one argument is provided, then return a function that
+ expects one argument and returns the sum.
+
+ For example, addTogether(2, 3) should return 5, and addTogether(2) should return a function.
+
+ Calling this returned function with a single argument will then return the sum:
+
+ var sumTwoAnd = addTogether(2);
+
+ sumTwoAnd(3) returns 5.
+
+ If either argument isn't a valid number, return undefined.
+
+ Remember to use Read-Search-Ask if you get stuck. Try to pair program. Write your own code.        */
+
+function addTogether() {
+    var args = Array.from(arguments);
+    return args.some(n => typeof  n !== 'number') ? undefined:
+        args.length > 1 ? args.reduce((acc, n) => acc += n, 0):
+            (n) => typeof  n === "number" ? n + args[0]: undefined;
+}
+
+console.log(addTogether(3)(3));
+
+/* *******************************************************************************
+****************************************************************************** */
+
+/**TODO Intermediate Algorithm Scripting: Make a Person
+
+ Fill in the object constructor with the following methods below:
+
+ getFirstName() getLastName() getFullName() setFirstName(first) setLastName(last) setFullName(firstAndLast)
+ Run the tests to see the expected output for each method.
+
+ The methods that take an argument must accept only one argument and it has to be a string.
+
+ These methods must be the only available means of interacting with the object.
+
+ Remember to use Read-Search-Ask if you get stuck. Try to pair program. Write your own code.        */
+
+var Person = function(firstAndLast) {
+    var fullName = firstAndLast;
+
+    this.getFirstName = function() {
+        return fullName.split(" ")[0];
+    };
+
+    this.getLastName = function() {
+        return fullName.split(" ")[1];
+    };
+
+    this.getFullName = function() {
+        return fullName;
+    };
+
+    this.setFirstName = function(name) {
+        fullName = name + " " + fullName.split(" ")[1];
+    };
+    this.setLastName = function(name) {
+        fullName = fullName.split(" ")[0] + " " + name;
+    };
+
+    this.setFullName = function(name) {
+        fullName = name;
+    };
+};
+
+var bob = new Person('Bob Ross');
+console.log(bob.getFullName());
+
+/* *******************************************************************************
+****************************************************************************** */
+
+/**TODO Intermediate Algorithm Scripting: Map the Debris
+
+ Return a new array that transforms the elements' average altitude into their orbital periods (in seconds).
+
+ The array will contain objects in the format {name: 'name', avgAlt: avgAlt}.
+
+ You can read about orbital periods on Wikipedia.
+
+ The values should be rounded to the nearest whole number. The body being orbited is Earth.
+
+ The radius of the earth is 6367.4447 kilometers, and the GM value of earth is 398600.4418 km3s-2.
+
+ Remember to use Read-Search-Ask if you get stuck. Try to pair program. Write your own code.        */
+
+function orbitalPeriod(arr) {
+    var GM = 398600.4418;
+    var earthRadius = 6367.4447;
+
+    for(var prop in arr) {
+        var orbitalPer = Math.round(2 * Math.PI * Math.sqrt(Math.pow(arr[prop].avgAlt + earthRadius, 3) /GM));
+        delete arr[prop].avgAlt;
+        arr[prop].orbitalPeriod = orbitalPer;
+    }
+    return arr;
+}
+
+console.log(orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]));
 
 /* *******************************************************************************
 ****************************************************************************** */
